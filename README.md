@@ -24,7 +24,7 @@ The figma layout of the application was found in the public domain. [The figma l
 - Tanstack react-query (5.48.0)
 - Axios (1.7.2)
 - React hook form (7.52.0)
-- Material UI (5.15.20)
+- Tailwind CSS (3.4.4)
 
 ## Environment
 
