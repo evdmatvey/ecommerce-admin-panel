@@ -5,9 +5,18 @@
   "singleQuote": true,
   "semi": true,
   "endOfLine": "auto",
-  "importOrder": ["<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[../]", "^[./]"],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/pages/(.*)$",
+    "^@/widgets/(.*)$",
+    "^@/features/(.*)$",
+    "^@/entities/(.*)$",
+    "^@/shared/(.*)$",
+    "^[../]",
+    "^[./]"
+  ],
   "experimentalBabelParserPluginsList": true,
-  "importOrderSeparation": true,
+  "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }
