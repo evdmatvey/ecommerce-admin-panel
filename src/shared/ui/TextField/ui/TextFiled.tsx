@@ -31,7 +31,7 @@ const TextFiled: FC<TextFiledProps> = ({
     return (
       <div className="flex flex-col gap-2">
         <input className={textFieldClasses} {...props} {...register} />
-        <p className="text-red-500">{error}</p>
+        {error && <p className="text-red-500">{error}</p>}
       </div>
     );
 

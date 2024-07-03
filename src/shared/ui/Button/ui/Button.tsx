@@ -8,7 +8,7 @@ interface ButtonProps extends ComponentProps<'button'> {
   isIconOnly?: boolean;
 }
 
-// TODO: Add secondary & iconOnly styles
+// TODO: Add secondary styles
 
 const Button: FC<ButtonProps> = ({
   variant,
@@ -23,6 +23,7 @@ const Button: FC<ButtonProps> = ({
     {
       'bg-red-500 hover:bg-red-600': variant === 'primary',
       'px-4 py-2 rounded-lg': !isIconOnly,
+      'stroke-gray-500 hover:stroke-gray-700 duration-100': isIconOnly,
     },
   );
   return (
