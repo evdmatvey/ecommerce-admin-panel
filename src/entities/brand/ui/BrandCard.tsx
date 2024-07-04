@@ -1,25 +1,25 @@
 import { FC, ReactNode } from 'react';
 import { TitleOnlyCard } from '@/shared/ui/TitleOnlyCard';
-import { Category } from '../model/types';
+import { Brand } from '../model/types';
 
-interface CategoryCardProps {
-  category: Category;
+interface BrandCardProps {
+  brand: Brand;
   deleteButtonSlot?: ReactNode;
   updateButtonSlot?: ReactNode;
 }
 
-const CategoryCard: FC<CategoryCardProps> = ({
-  category,
+const BrandCard: FC<BrandCardProps> = ({
+  brand,
   deleteButtonSlot,
   updateButtonSlot,
 }) => {
   return (
     <TitleOnlyCard
-      data={category}
+      data={brand}
       deleteButtonSlot={deleteButtonSlot}
       updateButtonSlot={updateButtonSlot}
     />
   );
 };
 
-export default CategoryCard;
+export default BrandCard;

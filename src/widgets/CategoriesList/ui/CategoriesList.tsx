@@ -1,11 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { DeleteCategory } from '@/features/DeleteCategory';
 import { UpdateCategory } from '@/features/UpdateCategory';
-import {
-  CategoryCard,
-  CategorySkeleton,
-  categoryService,
-} from '@/entities/category';
+import { CategoryCard, categoryService } from '@/entities/category';
+import { TitleOnlyCardSkeleton } from '@/shared/ui/TitleOnlyCard';
 
 const CategoriesList = () => {
   const { data, isLoading } = useQuery({
@@ -13,16 +10,12 @@ const CategoriesList = () => {
     queryFn: () => categoryService.getAll(),
   });
 
-  const skeletons = new Array(20).fill(<CategorySkeleton />);
+  const skeletons = new Array(18).fill(<TitleOnlyCardSkeleton />);
 
   if (isLoading)
     return (
       <ul className="grid grid-cols-3 gap-5">
-        {skeletons?.map((_, index) => (
-          <li key={index}>
-            <CategorySkeleton />
-          </li>
-        ))}
+        {skeletons?.map((skeleton, index) => <li key={index}>{skeleton}</li>)}
       </ul>
     );
 

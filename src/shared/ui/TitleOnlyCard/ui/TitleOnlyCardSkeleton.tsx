@@ -1,4 +1,4 @@
-const CategorySkeleton = () => {
+const TitleOnlyCardSkeleton = () => {
   return (
     <div className="bg-gray-300 shadow-sm p-3 rounded-lg flex justify-between items-center animate-pulse">
       <div className="w-40 bg-gray-400 h-4 rounded-xl"></div>
@@ -10,4 +10,4 @@ const CategorySkeleton = () => {
   );
 };
 
-export default CategorySkeleton;
+export default TitleOnlyCardSkeleton;

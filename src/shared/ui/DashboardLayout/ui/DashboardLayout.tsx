@@ -32,6 +32,14 @@ const DashboardLayout = () => {
                 Категории
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => getLinkClasses(isActive)}
+                to="/brands"
+              >
+                Бренды
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </aside>
