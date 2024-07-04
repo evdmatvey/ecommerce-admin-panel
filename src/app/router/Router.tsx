@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Brands from '@/pages/Brands';
 import Categories from '@/pages/Categories';
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
@@ -15,6 +16,7 @@ const Router = () => {
         >
           <Route path="/" element={<Home />} />
           <Route path="categories" element={<Categories />} />
+          <Route path="brands" element={<Brands />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
