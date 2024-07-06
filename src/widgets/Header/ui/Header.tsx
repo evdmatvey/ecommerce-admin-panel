@@ -1,4 +1,4 @@
-import { Logout } from '@/features/Logout';
+import { Logout } from '@/features/user/Logout';
 import { selectIsAuthenticated, useUserStore } from '@/entities/user';
 import Logo from '@/shared/assets/logo.svg';
 

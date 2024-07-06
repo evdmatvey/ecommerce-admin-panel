@@ -8,4 +8,5 @@ export interface AuthDto {
 export interface AuthResponse {
   user: User;
   accessToken: string;
+  message: string;
 }

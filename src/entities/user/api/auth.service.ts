@@ -19,15 +19,15 @@ export const removeAccessToken = () => {
 class AuthService {
   private readonly _baseUrl = '/auth';
 
-  public async login(dto: AuthDto): Promise<User> {
+  public async login(dto: AuthDto): Promise<Omit<AuthResponse, 'accessToken'>> {
     const response = await axiosWithAuth.post<AuthResponse>(
       `${this._baseUrl}/login`,
       dto,
     );
 
-    const user = this._extractUserFromResponse(response.data);
+    const data = this._extractUserFromResponse(response.data);
 
-    return user;
+    return data;
   }
 
   public async authMe(): Promise<User> {
@@ -35,9 +35,9 @@ class AuthService {
       `${this._baseUrl}/auth-me`,
     );
 
-    const user = this._extractUserFromResponse(response.data);
+    const data = this._extractUserFromResponse(response.data);
 
-    return user;
+    return data.user;
   }
 
   public async logout(): Promise<boolean> {
@@ -49,13 +49,13 @@ class AuthService {
   }
 
   private _extractUserFromResponse(response: AuthResponse) {
-    const { accessToken, user } = response;
+    const { accessToken, ...data } = response;
 
-    this._checkUserRole(user.role);
+    this._checkUserRole(data.user.role);
 
     saveAccessToken(accessToken);
 
-    return user;
+    return data;
   }
 
   private _checkUserRole(role: string) {

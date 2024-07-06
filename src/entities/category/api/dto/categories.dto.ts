@@ -7,6 +7,8 @@ export interface CreateCategoryDto {
 
 export type UpdateCategoryDto = CreateCategoryDto;
 
-export interface UpdateCategoryResponse extends MessageResponse {
+export interface CreateCategoryResponse extends MessageResponse {
   category: Category;
 }
+
+export type UpdateCategoryResponse = CreateCategoryResponse;

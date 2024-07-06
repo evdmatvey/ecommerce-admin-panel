@@ -1,5 +1,5 @@
 import { CategoriesList } from '@/widgets/CategoriesList';
-import { CreateCategory } from '@/features/CreateCategory';
+import { CreateCategory } from '@/features/category/CreateCategory';
 
 const Categories = () => {
   return (

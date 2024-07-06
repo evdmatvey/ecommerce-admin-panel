@@ -1,5 +1,5 @@
 import { BrandsList } from '@/widgets/BrandsList';
-import { CreateBrand } from '@/features/CreateBrand';
+import { CreateBrand } from '@/features/brand/CreateBrand';
 
 const Brands = () => {
   return (

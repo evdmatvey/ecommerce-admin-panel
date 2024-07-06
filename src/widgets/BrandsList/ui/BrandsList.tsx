@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { DeleteBrand } from '@/features/DeleteBrand';
-import { UpdateBrand } from '@/features/UpdateBrand';
+import { DeleteBrand } from '@/features/brand/DeleteBrand';
+import { UpdateBrand } from '@/features/brand/UpdateBrand';
 import { BrandCard, brandService } from '@/entities/brand';
 import { TitleOnlyCardSkeleton } from '@/shared/ui/TitleOnlyCard';
 

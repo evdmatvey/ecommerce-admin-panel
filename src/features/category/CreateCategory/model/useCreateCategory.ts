@@ -9,7 +9,7 @@ export const useCreateCategory = () => {
   const { mutate } = useMutation({
     mutationFn: (data: CreateCategoryDto) => categoryService.create(data),
     onSuccess(data) {
-      toast.success(`Вы успешно создали категорию: ${data.title}`);
+      toast.success(data.message);
       queryClient.invalidateQueries({ queryKey: ['categories'] });
     },
     onError(error) {
