@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { DeleteCategory } from '@/features/DeleteCategory';
-import { UpdateCategory } from '@/features/UpdateCategory';
+import { DeleteCategory } from '@/features/category/DeleteCategory';
+import { UpdateCategory } from '@/features/category/UpdateCategory';
 import { CategoryCard, categoryService } from '@/entities/category';
 import { TitleOnlyCardSkeleton } from '@/shared/ui/TitleOnlyCard';
 

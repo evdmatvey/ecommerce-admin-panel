@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { LoginForm } from '@/features/LoginFrom';
+import { LoginForm } from '@/features/user/LoginFrom';
 import { selectIsAuthenticated, useUserStore } from '@/entities/user';
 
 const Login = () => {
