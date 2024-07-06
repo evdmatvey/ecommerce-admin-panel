@@ -3,6 +3,7 @@ import { MessageResponse } from '@/shared/types/message-response';
 import { Category } from '../model/types';
 import {
   CreateCategoryDto,
+  CreateCategoryResponse,
   UpdateCategoryDto,
   UpdateCategoryResponse,
 } from './dto/categories.dto';
@@ -10,8 +11,11 @@ import {
 class CategoryService {
   private readonly _baseUrl: string = '/category';
 
-  public async create(dto: CreateCategoryDto): Promise<Category> {
-    const response = await axiosWithAuth.post<Category>(this._baseUrl, dto);
+  public async create(dto: CreateCategoryDto): Promise<CreateCategoryResponse> {
+    const response = await axiosWithAuth.post<CreateCategoryResponse>(
+      this._baseUrl,
+      dto,
+    );
 
     return response.data;
   }

@@ -28,7 +28,7 @@ export const useLoginForm = () => {
 
     toast.promise(loginResponse, {
       loading: 'Вход...',
-      success: `Вы успешно вошли в систему!`,
+      success: (data) => data.message,
       error: (error) => {
         const errorMessage = getErrorMessage(error);
         return `Ошибка: ${errorMessage}`;
@@ -36,8 +36,8 @@ export const useLoginForm = () => {
     });
 
     loginResponse
-      .then((user) => {
-        setUser(user);
+      .then((data) => {
+        setUser(data.user);
         setIsAuthenticated(true);
         reset();
         navigate('/');
