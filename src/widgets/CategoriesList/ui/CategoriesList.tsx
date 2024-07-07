@@ -1,8 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { DeleteCategory } from '@/features/category/DeleteCategory';
 import { UpdateCategory } from '@/features/category/UpdateCategory';
-import { CategoryCard, categoryService } from '@/entities/category';
-import { TitleOnlyCardSkeleton } from '@/shared/ui/TitleOnlyCard';
+import { categoryService } from '@/entities/category';
+import {
+  TitleOnlyCard,
+  TitleOnlyCardSkeleton,
+} from '@/shared/ui/TitleOnlyCard';
 
 const CategoriesList = () => {
   const { data, isLoading } = useQuery({
@@ -23,10 +26,14 @@ const CategoriesList = () => {
     <ul className="grid grid-cols-3 gap-5">
       {data?.map((category) => (
         <li key={category.id}>
-          <CategoryCard
-            category={category}
-            updateButtonSlot={<UpdateCategory category={category} />}
-            deleteButtonSlot={<DeleteCategory id={category.id} />}
+          <TitleOnlyCard
+            data={category}
+            controlsSlot={
+              <>
+                <UpdateCategory category={category} />
+                <DeleteCategory id={category.id} />
+              </>
+            }
           />
         </li>
       ))}

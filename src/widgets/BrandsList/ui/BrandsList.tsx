@@ -1,8 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { DeleteBrand } from '@/features/brand/DeleteBrand';
 import { UpdateBrand } from '@/features/brand/UpdateBrand';
-import { BrandCard, brandService } from '@/entities/brand';
-import { TitleOnlyCardSkeleton } from '@/shared/ui/TitleOnlyCard';
+import { brandService } from '@/entities/brand';
+import {
+  TitleOnlyCard,
+  TitleOnlyCardSkeleton,
+} from '@/shared/ui/TitleOnlyCard';
 
 const BrandsList = () => {
   const { data, isLoading } = useQuery({
@@ -23,10 +26,14 @@ const BrandsList = () => {
     <ul className="grid grid-cols-3 gap-5">
       {data?.map((brand) => (
         <li key={brand.id}>
-          <BrandCard
-            brand={brand}
-            updateButtonSlot={<UpdateBrand brand={brand} />}
-            deleteButtonSlot={<DeleteBrand id={brand.id} />}
+          <TitleOnlyCard
+            data={brand}
+            controlsSlot={
+              <>
+                <UpdateBrand brand={brand} />
+                <DeleteBrand id={brand.id} />
+              </>
+            }
           />
         </li>
       ))}
