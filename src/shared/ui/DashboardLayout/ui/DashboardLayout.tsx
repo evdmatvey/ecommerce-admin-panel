@@ -40,6 +40,14 @@ const DashboardLayout = () => {
                 Бренды
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => getLinkClasses(isActive)}
+                to="/super-subcategories"
+              >
+                Супер подкатегории
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </aside>
