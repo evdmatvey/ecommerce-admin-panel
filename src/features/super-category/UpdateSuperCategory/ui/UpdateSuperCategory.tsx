@@ -1,5 +1,8 @@
 import { FC } from 'react';
-import { SuperCategoryWithSubcategories } from '@/entities/super-category';
+import {
+  SuperCategoryWithSubcategories,
+  superCategoryValidationConfig,
+} from '@/entities/super-category';
 import { Button } from '@/shared/ui/Button';
 import { EditIcon } from '@/shared/ui/Icons';
 import { Modal } from '@/shared/ui/Modal';
@@ -34,10 +37,7 @@ const UpdateSuperSubcategory: FC<UpdateSuperSubcategoryProps> = ({
             <TitleForm
               submitHandler={updateSuperCategoryHandler}
               buttonText="Обновить"
-              errorMessages={{
-                notEmpty: 'Укажите корректное название супер подкатегории!',
-                required: 'Укажите название супер подкатегории!',
-              }}
+              errorMessages={superCategoryValidationConfig}
               value={superCategory.title}
             />
             <h3 className="font-semibold">Подкатегории</h3>
