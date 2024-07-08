@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Category } from '@/entities/category';
+import { Category, categoryValidationConfig } from '@/entities/category';
 import { Button } from '@/shared/ui/Button';
 import { EditIcon } from '@/shared/ui/Icons';
 import { Modal } from '@/shared/ui/Modal';
@@ -24,10 +24,7 @@ const UpdateCategory: FC<UpdateCategoryProps> = ({ category }) => {
           <TitleForm
             submitHandler={updateCategoryHandler}
             buttonText="Обновить"
-            errorMessages={{
-              notEmpty: 'Укажите корректное название категории!',
-              required: 'Укажите название категории!',
-            }}
+            errorMessages={categoryValidationConfig}
             value={category.title}
           />
         </Modal>

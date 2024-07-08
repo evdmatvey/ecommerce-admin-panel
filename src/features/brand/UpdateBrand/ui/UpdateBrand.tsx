@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Brand } from '@/entities/brand';
+import { Brand, brandValidationConfig } from '@/entities/brand';
 import { Button } from '@/shared/ui/Button';
 import { EditIcon } from '@/shared/ui/Icons';
 import { Modal } from '@/shared/ui/Modal';
@@ -24,10 +24,7 @@ const UpdateBrand: FC<UpdateBrandProps> = ({ brand }) => {
           <TitleForm
             submitHandler={updateBrandHandler}
             buttonText="Обновить"
-            errorMessages={{
-              notEmpty: 'Укажите корректное название категории!',
-              required: 'Укажите название категории!',
-            }}
+            errorMessages={brandValidationConfig}
             value={brand.title}
           />
         </Modal>

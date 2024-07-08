@@ -1,3 +1,4 @@
+import { categoryValidationConfig } from '@/entities/category';
 import { TitleForm } from '@/shared/ui/TitleForm';
 import { useCreateCategory } from '../model/useCreateCategory';
 
@@ -6,10 +7,7 @@ const CreateCategory = () => {
 
   return (
     <TitleForm
-      errorMessages={{
-        notEmpty: 'Укажите корректное название категории!',
-        required: 'Укажите название категории!',
-      }}
+      errorMessages={categoryValidationConfig}
       submitHandler={createCategoryHandler}
       buttonText="Cоздать"
     />

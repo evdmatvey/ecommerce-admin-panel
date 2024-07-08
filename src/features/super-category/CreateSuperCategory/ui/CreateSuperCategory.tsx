@@ -1,3 +1,4 @@
+import { superCategoryValidationConfig } from '@/entities/super-category';
 import { TitleForm } from '@/shared/ui/TitleForm';
 import { useCreateSuperCategory } from '../model/useCreateSuperCategory';
 
@@ -7,10 +8,7 @@ const CreateSuperCategory = () => {
   return (
     <TitleForm
       submitHandler={createSuperCategoryHandler}
-      errorMessages={{
-        required: 'Укажите название супер категории!',
-        notEmpty: 'Укажите корректное название супер категории!',
-      }}
+      errorMessages={superCategoryValidationConfig}
       buttonText="Создать"
     />
   );

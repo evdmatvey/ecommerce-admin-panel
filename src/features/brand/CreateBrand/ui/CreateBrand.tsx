@@ -1,3 +1,4 @@
+import { brandValidationConfig } from '@/entities/brand';
 import { TitleForm } from '@/shared/ui/TitleForm';
 import { useCreateBrand } from '../model/useCreateBrand';
 
@@ -6,10 +7,7 @@ const CreateBrand = () => {
 
   return (
     <TitleForm
-      errorMessages={{
-        notEmpty: 'Укажите корректное название бренда!',
-        required: 'Укажите название бренда!',
-      }}
+      errorMessages={brandValidationConfig}
       submitHandler={createBrandHandler}
       buttonText="Cоздать"
     />
