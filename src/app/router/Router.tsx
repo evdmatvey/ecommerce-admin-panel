@@ -5,6 +5,8 @@ import Home from '@/pages/Home';
 import Login from '@/pages/Login';
 import SuperCategories from '@/pages/SuperCategories';
 import SuperSubcategories from '@/pages/SuperSubcategories';
+import { NavigationSidebar } from '@/widgets/NavigationSidebar';
+import { routesConfig } from '@/shared/config/routes.config';
 import { DashboardLayout } from '@/shared/ui/DashboardLayout';
 import ProtectedRoute from './ProtectedRoute';
 
@@ -13,16 +15,26 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
-          element={<ProtectedRoute children={<DashboardLayout />} />}
+          path={routesConfig.DASHBOARD}
+          element={
+            <ProtectedRoute
+              children={<DashboardLayout sidebarSlot={<NavigationSidebar />} />}
+            />
+          }
         >
-          <Route path="/" element={<Home />} />
-          <Route path="categories" element={<Categories />} />
-          <Route path="brands" element={<Brands />} />
-          <Route path="super-subcategories" element={<SuperSubcategories />} />
-          <Route path="super-categories" element={<SuperCategories />} />
+          <Route path={routesConfig.DASHBOARD} element={<Home />} />
+          <Route path={routesConfig.CATEGORIES} element={<Categories />} />
+          <Route path={routesConfig.BRANDS} element={<Brands />} />
+          <Route
+            path={routesConfig.SUPER_SUBCATEGORIES}
+            element={<SuperSubcategories />}
+          />
+          <Route
+            path={routesConfig.SUPER_CATEGORIES}
+            element={<SuperCategories />}
+          />
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route path={routesConfig.LOGIN} element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
