@@ -48,6 +48,14 @@ const DashboardLayout = () => {
                 Супер подкатегории
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => getLinkClasses(isActive)}
+                to="/super-categories"
+              >
+                Супер категории
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </aside>
